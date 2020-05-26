@@ -12,3 +12,7 @@ Este proyecto estudia cómo modelar y simular un sistema a través de cálculos 
 
 # Análisis estadístico
 ![Estadisticas](/img/analisis-estadistico.PNG)
+
+# Opciones de distribución de los datos
+
+![Distribución](/img/distribuciones.png)
