@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparacion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+            <div class="col-6 text-center">
+                <h2 class="text-bold" style="color: #0733b9;">Comparación de datos del Vector {{vector}}</h2>
+                <h4>El error total es de: {{error}}</h4>
+                <h4>El error medio es de: {{error_medio}}</h4>
+                <div class="card" style="background-color: rgba(199, 199, 199, 0.466);">
+                    <h4 style="color: orange;"><strong>La ecuación utilizada fue: {{ecuacion}}</strong></h4>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <img src="{{ url_for('static', filename='img/undraw_percentages.png') }}" alt="Dashboard" style="width: 70%;">
+            </div>
+        </div>
+
+       <table class="table table-striped">
+            <thead class="thead text-white" style="background-color: #0733b9;">
+                <tr>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+                <th scope="col">Predicción</th>
+                <th scope="col">Error</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(0,x|length) %}
+                    
+                <tr>
+                    <th scope="row">{{x[i]}}</th>
+                    <td>{{y[i]}}</td>
+                    <td>{{pred[i]}}</td>
+                    <td>{{ (pred[i]-y[i])|abs }}</td>
+                    </tr>
+        
+                {% endfor %}
+                
+                
+            </tbody>
+            </table>
+    </div>
+</body>
+</html>

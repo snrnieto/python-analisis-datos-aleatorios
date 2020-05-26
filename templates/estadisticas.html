@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadistica</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- flex-column d-flex align-items-center -->
+</head>
+<body style="background-color: rgb(219, 219, 219);">
+    <div class="container text-center p-2" style="max-width: 60rem;" >
+        <img src="{{ url_for('static', filename='img/undraw_visual_data.png') }}" alt="Dashboard" style="width: 25%;">
+        <h1>Analisis Estadístico del Vector {{vector}}</h1>
+        <div class="tarjetas d-flex flex-wrap justify-content-center">
+
+            <div class="card text-white p-2 m-3" style="max-width: 14rem; max-height: 10rem; background-color: #E5228C;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Cantidad</h2></div>
+                    <h1>{{cant}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white bg-primary p-2 m-3" style="max-width: 14rem; max-height: 10rem;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Máximo</h2></div>
+                    <h1>{{max}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white bg-warning p-2 m-3" style="max-width: 14rem; max-height: 10rem;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Mínimo</h2></div>
+                    <h1>{{min}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white bg-success p-2 m-3" style="max-width: 14rem; max-height: 10rem;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Promedio</h2></div>
+                    <h1>{{prom}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white bg-danger p-2 m-3" style="max-width: 14rem; max-height: 10rem;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Desviación</h2></div>
+                    <h1>{{des}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white p-2 m-3" style="max-width: 14rem; max-height: 10rem; background-color: purple;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Varianza</h2></div>
+                    <h1>{{var}}</h1>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark p-2 m-3" style="max-width: 14rem; max-height: 10rem;">
+                <div class="card-body">
+                    <div class="card-title"><h2>Correlación</h2></div>
+                    <h1>{{cor}}</h1>
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    <div style="height: 1px; margin-top: 10px;  margin-bottom: 10px;" class="bg-dark"></div>
+    <div class="text-center">
+        <h1>Histograma</h1>
+        <div style="border: solid 4px black; width: 100%;">
+            <img src="data:image/png;base64, {{ plot_url }}" style="width: 80%;">
+        </div>
+    </div>
+</body>
+</html>
